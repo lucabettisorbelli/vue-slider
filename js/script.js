@@ -36,9 +36,23 @@ createApp({
         methods: {
             nextSlide () {
                 this.currentSlide++;
+                if(this.currentSlide > 4) {
+                    this.currentSlide = 0;
+                }
             },
             prevSlide () {
                 this.currentSlide--;
+                if(this.currentSlide < 0) {
+                    this.currentSlide = 4;
+                }
+            },
+            getClasses (i) {
+                let classes = "thumb";
+
+                if(this.currentSlide == i) {
+                    classes += " active"
+                }
+                return classes;
             }
         }
 }).mount('#app')
