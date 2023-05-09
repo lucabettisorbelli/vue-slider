@@ -4,6 +4,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            autoScroll: null,
             currentSlide: 0,
             slides: [
                 {
@@ -54,7 +55,16 @@ createApp({
                 }
                 return classes;
             },
-    
+            setAutoScroll () {
+                if(this.autoScroll == null) {
+                    this.autoScroll = setInterval (() => {
+                        this.nextSlide();
+                    }, 1000);
+                } else {
+                    clearInterval(this.autoScroll);
+                    this.autoScroll = null;
+                }
+            },
         }
 }).mount('#app')
 

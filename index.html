@@ -26,6 +26,7 @@
                             {{slides[currentSlide].text}}
                         </p>
                     </div>
+                    <button @click="setAutoScroll()">Set autoPlay {{ autoScroll == null ? "ON" : "OFF" }}</button>
                 </div>
 
                 <div class="thumbs">
