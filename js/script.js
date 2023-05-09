@@ -53,7 +53,8 @@ createApp({
                     classes += " active"
                 }
                 return classes;
-            }
+            },
+    
         }
 }).mount('#app')
 

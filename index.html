@@ -32,7 +32,7 @@
                     <div @click="prevSlide()" class="prev"></div>
                     <div @click="nextSlide()" class="next"></div>
 
-                    <div v-for="(slide, i) in slides" :key="slide.image" :class="getClasses(i)">
+                    <div v-for="(slide, i) in slides" :key="slide.image" :class="getClasses(i)" @click="currentSlide = i">
                         <img :src="slide.image">
                     </div>
 
