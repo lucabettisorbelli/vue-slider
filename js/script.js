@@ -1,9 +1,10 @@
 
-const { createApp } = vue
+const { createApp } = Vue
 
 createApp({
     data() {
         return {
+            currentSlide: 0,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -28,7 +29,18 @@ createApp({
                 }
             ]
             
+            
         }
 
         },
+        methods: {
+            nextSlide () {
+                this.currentSlide++;
+            },
+            prevSlide () {
+                this.currentSlide--;
+            }
+        }
 }).mount('#app')
+
+
